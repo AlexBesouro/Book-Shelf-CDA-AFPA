@@ -1,0 +1,13 @@
+# Line endings: Git stores and checks out text files with LF, on every OS
+* text=auto eol=lf
+
+# Windows scripts: CRLF required
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Binary files: never converted
+*.png binary
+*.jpg binary
+*.ico binary
+*.pdf binary

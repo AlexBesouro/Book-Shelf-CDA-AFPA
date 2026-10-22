@@ -34,6 +34,12 @@ poetry run pre-commit install
 | `poetry run pre-commit run --all-files` | Lancer tous les contrôles du commit sur tout le dépôt |
 | `poetry add <paquet>` | Ajouter une dépendance (`--group dev` pour un outil de développement) |
 
+## Éditeur
+
+Les réglages communs sont versionnés : `.editorconfig` (encodage, fins de ligne, indentation, pour tous les éditeurs) et `.vscode/` pour VS Code. À l'ouverture du projet, VS Code propose d'installer les extensions recommandées (Python, Ruff, Mypy Type Checker, EditorConfig) : acceptez. Le code est alors formaté et corrigé par Ruff à chaque enregistrement.
+
+Les réglages personnels (thème, police, raccourcis) restent dans vos paramètres utilisateur.
+
 ## Documentation
 
 - [Note de cadrage](docs/note-de-cadrage.md)
