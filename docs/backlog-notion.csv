@@ -1,0 +1,20 @@
+Titre,ID,Ordre,Type,User story,Rôle,Épopée,MoSCoW,Points,Statut
+Créer un compte,US-01,1,User story,"En tant que visiteur, je veux créer un compte (pseudonyme, courriel, mot de passe), afin de garder mes lectures d'une visite à l'autre",Visiteur,Compte,Must,5,Backlog
+Se connecter,US-02,2,User story,"En tant que lecteur, je veux me connecter et me déconnecter, afin d'accéder à ma bibliothèque en sécurité",Lecteur,Compte,Must,5,Backlog
+Ajouter un livre,US-03,3,User story,"En tant que lecteur, je veux ajouter un livre (titre, auteur, genre, langue) avec son statut, afin de ne plus oublier les titres qu'on me recommande",Lecteur,Bibliothèque,Must,3,Backlog
+Consulter ma bibliothèque,US-04,4,User story,"En tant que lecteur, je veux voir la liste de mes livres, afin d'avoir toutes mes lectures au même endroit",Lecteur,Bibliothèque,Must,3,Backlog
+Changer le statut,US-05,5,User story,"En tant que lecteur, je veux changer le statut d'un livre (à lire, en cours, lu), afin de suivre où j'en suis",Lecteur,Bibliothèque,Must,2,Backlog
+Écrire mes impressions,US-06,6,User story,"En tant que lecteur, je veux noter un livre sur 10, écrire mon ressenti et des citations, afin de m'en souvenir plus tard",Lecteur,Impressions,Must,3,Backlog
+Fiche d'un livre,US-07,7,User story,"En tant que lecteur, je veux ouvrir la fiche d'un livre, afin de retrouver mes impressions rapidement",Lecteur,Impressions,Must,2,Backlog
+Statistiques,US-08,8,User story,"En tant que lecteur, je veux voir le nombre de livres lus par année, par auteur et par genre, afin d'avoir une vue d'ensemble de mes lectures",Lecteur,Statistiques,Must,5,Backlog
+Supprimer mon compte,US-09,9,User story,"En tant que lecteur, je veux supprimer mon compte, afin que mes données ne soient plus conservées",Lecteur,Compte,Must,3,Backlog
+Modifier ou supprimer un livre,US-10,10,User story,"En tant que lecteur, je veux modifier ou supprimer un livre, afin de corriger une erreur de saisie",Lecteur,Bibliothèque,Should,2,Backlog
+Supprimer ou restaurer un compte,US-11,11,User story,"En tant qu'administrateur, je veux supprimer le compte d'un autre utilisateur ou le restaurer dans les 30 jours, afin d'écarter un usage abusif sans perdre de données par erreur",Administrateur,Administration,Should,5,Backlog
+Créer un groupe,US-12,12,User story,"En tant que lecteur, je veux créer un groupe de lecture (nom, description), afin de lire avec d'autres",Lecteur,Groupes,Should,3,Backlog
+Rejoindre un groupe,US-13,13,User story,"En tant que lecteur, je veux rejoindre un groupe, afin de participer à une lecture commune",Lecteur,Groupes,Should,2,Backlog
+Rechercher et filtrer,US-14,14,User story,"En tant que lecteur, je veux rechercher par titre ou auteur et filtrer par statut, genre ou langue, afin de retrouver un livre dans une grande bibliothèque",Lecteur,Bibliothèque,Could,3,Backlog
+Livre et rythme du groupe,US-15,15,User story,"En tant que créateur d'un groupe, je veux choisir le livre et un objectif de rythme (ex. 3 chapitres par semaine), afin de donner un cadre commun",Lecteur,Groupes,Could,3,Backlog
+Progression dans le groupe,US-16,16,User story,"En tant que membre d'un groupe, je veux indiquer ma progression et voir celle des autres, afin de garder le rythme ensemble",Lecteur,Groupes,Could,5,Backlog
+Fonctions sociales,US-17,,User story,"En tant que lecteur, je veux suivre d'autres lecteurs, commenter et discuter dans les groupes",Lecteur,Hors périmètre,Won't (v1),,Backlog
+Recommandations,US-18,,User story,"En tant que lecteur, je veux recevoir des recommandations automatiques de livres",Lecteur,Hors périmètre,Won't (v1),,Backlog
+Liens boutiques,US-19,,User story,"En tant que lecteur, je veux acheter un livre ou voir où l'acheter",Lecteur,Hors périmètre,Won't (v1),,Backlog

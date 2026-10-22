@@ -1,0 +1,23 @@
+# Environnement virtuel et caches Python
+.venv/
+__pycache__/
+*.py[cod]
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+
+# Front (Lit)
+node_modules/
+dist/
+
+# Secrets
+.env
+
+# Éditeur et système
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,6 @@
+blank_issues_enabled: false
+contact_links:
+  # TODO : remplacer par le lien public du tableau Notion (Share → Publish)
+  - name: Idée de fonctionnalité
+    url: https://www.notion.so/a-remplacer
+    about: Les nouvelles idées vont dans le backlog Notion, pas dans les issues.
