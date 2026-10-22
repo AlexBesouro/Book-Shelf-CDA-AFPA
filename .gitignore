@@ -17,7 +17,10 @@ dist/
 .env
 
 # Éditeur et système
-.vscode/
+# VS Code: share only the team settings, keep the rest personal
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
 .idea/
 .DS_Store
 Thumbs.db
