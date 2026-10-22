@@ -1,20 +1,20 @@
-# Contrôles lancés automatiquement à chaque `git commit`.
-# Installation : poetry run pre-commit install
-# Lancement manuel sur tout le dépôt : poetry run pre-commit run --all-files
+# Checks run automatically on every `git commit`.
+# Install: poetry run pre-commit install
+# Run manually on the whole repo: poetry run pre-commit run --all-files
 repos:
-  # Contrôles généraux sur tous les fichiers
+  # General checks on all files
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:
-      - id: trailing-whitespace      # espaces en fin de ligne
-      - id: end-of-file-fixer        # une ligne vide en fin de fichier
-      - id: check-yaml               # YAML valide
-      - id: check-toml               # TOML valide (pyproject.toml)
-      - id: check-added-large-files  # pas de gros fichier par erreur
-      - id: detect-private-key       # aucune clé privée commitée
-      - id: check-merge-conflict     # pas de marqueurs <<<<<<< oubliés
+      - id: trailing-whitespace      # trailing spaces at end of lines
+      - id: end-of-file-fixer        # single newline at end of file
+      - id: check-yaml               # valid YAML
+      - id: check-toml               # valid TOML (pyproject.toml)
+      - id: check-added-large-files  # no large file added by mistake
+      - id: detect-private-key       # no private key committed
+      - id: check-merge-conflict     # no leftover <<<<<<< markers
 
-  # Ruff : lint (avec correction auto) puis formatage — même version que dans pyproject.toml
+  # Ruff: lint (with auto-fix) then format — same version as in pyproject.toml
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.17.1
     hooks:
@@ -22,7 +22,7 @@ repos:
         args: [--fix]
       - id: ruff-format
 
-  # mypy : lancé dans l'environnement Poetry pour voir les dépendances du projet
+  # mypy: run inside the Poetry environment so it sees the project's dependencies
   - repo: local
     hooks:
       - id: mypy
