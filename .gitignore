@@ -21,3 +21,7 @@ dist/
 .idea/
 .DS_Store
 Thumbs.db
+
+# Brouillons locaux
+sandbox.py
+structure.md
