@@ -24,7 +24,6 @@ Pourquoi : un seul développeur, une version livrée par étape, pas de versions
 Toute modification de `main` passe par une pull request (ruleset « Protéger main ») :
 
 - le modèle de pull request est rempli : lien vers la carte Notion (ou `Closes #N` pour une anomalie) et checklist de la DoD (`docs/definition-of-done.md`) ;
-- relecture à froid dans *Files changed* avant la fusion ;
 - fusion par **Squash and merge** : un commit par story sur `main`, titré comme la pull request.
 
 ## Messages de commit
