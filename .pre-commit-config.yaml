@@ -1,0 +1,32 @@
+# Contrôles lancés automatiquement à chaque `git commit`.
+# Installation : poetry run pre-commit install
+# Lancement manuel sur tout le dépôt : poetry run pre-commit run --all-files
+repos:
+  # Contrôles généraux sur tous les fichiers
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace      # espaces en fin de ligne
+      - id: end-of-file-fixer        # une ligne vide en fin de fichier
+      - id: check-yaml               # YAML valide
+      - id: check-toml               # TOML valide (pyproject.toml)
+      - id: check-added-large-files  # pas de gros fichier par erreur
+      - id: detect-private-key       # aucune clé privée commitée
+      - id: check-merge-conflict     # pas de marqueurs <<<<<<< oubliés
+
+  # Ruff : lint (avec correction auto) puis formatage — même version que dans pyproject.toml
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.17.1
+    hooks:
+      - id: ruff-check
+        args: [--fix]
+      - id: ruff-format
+
+  # mypy : lancé dans l'environnement Poetry pour voir les dépendances du projet
+  - repo: local
+    hooks:
+      - id: mypy
+        name: mypy
+        entry: poetry run mypy
+        language: system
+        types: [python]

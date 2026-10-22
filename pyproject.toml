@@ -1,0 +1,24 @@
+[project]
+name = "book-shelf"
+version = "0.1.0"
+description = "Application de gestion de bibliothèque personnelle"
+authors = [
+    {name = "Alex"}
+]
+requires-python = ">=3.14"
+dependencies = [
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "mypy (>=2.4.0,<3.0.0)",
+    "pytest (>=9.1.1,<10.0.0)",
+    "ruff (>=0.17.1,<0.18.0)",
+    "pytest-cov (>=7.1.0,<8.0.0)",
+    "pre-commit (>=4.7.0,<5.0.0)"
+]
