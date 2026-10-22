@@ -11,6 +11,7 @@ Projet réalisé dans le cadre de la formation Concepteur Développeur d'Applica
 - [Python](https://www.python.org/) 3.14 ou plus
 - [Poetry](https://python-poetry.org/) 2 (par exemple : `pipx install poetry`)
 - [Git](https://git-scm.com/)
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) (avec WSL 2 sous Windows), pour PostgreSQL et Redis
 
 ## Installation
 
@@ -22,6 +23,38 @@ poetry run pre-commit install
 ```
 
 `poetry install` crée l'environnement virtuel et installe les dépendances ; `pre-commit install` active les contrôles automatiques à chaque `git commit`.
+
+## Services (Docker)
+
+PostgreSQL et Redis tournent dans Docker (`compose.yaml`) ; l'API tourne sur la machine avec Poetry.
+
+1. Créer son fichier de configuration à partir du modèle, puis y mettre ses propres valeurs (au minimum un mot de passe) :
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   `.env` est ignoré par Git : il ne doit jamais être commité.
+
+2. Démarrer les services, puis vérifier qu'ils sont `healthy` :
+
+   ```bash
+   docker compose up -d
+   docker compose ps
+   ```
+
+| Commande | Rôle |
+|---|---|
+| `docker compose config` | Afficher la configuration avec les valeurs de `.env` (contient le mot de passe : ne pas la partager) |
+| `docker compose up -d` | Démarrer les services en arrière-plan |
+| `docker compose ps` | Voir l'état des services |
+| `docker compose logs db` | Voir les journaux d'un service |
+| `docker compose down` | Arrêter les services (les données sont conservées) |
+| `docker compose down -v` | Arrêter et **supprimer les données** (volumes) |
+
+Les variables de `.env` ne sont lues par PostgreSQL qu'au premier démarrage : pour changer l'utilisateur ou le mot de passe ensuite, repartir de zéro avec `docker compose down -v`.
+
+**Connexion à la base (DBeaver ou autre client)** : hôte `localhost`, port `POSTGRES_PORT` (5432 par défaut), base, utilisateur et mot de passe de votre `.env`. Si un PostgreSQL est déjà installé sur la machine, choisir un autre port (par exemple 5433).
 
 ## Commandes utiles
 
