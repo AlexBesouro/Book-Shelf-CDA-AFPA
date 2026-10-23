@@ -7,6 +7,7 @@ authors = [
 ]
 requires-python = ">=3.14"
 dependencies = [
+    "fastapi[standard] (>=0.161.1,<0.162.0)"
 ]
 
 
@@ -22,3 +23,22 @@ dev = [
     "pytest-cov (>=7.1.0,<8.0.0)",
     "pre-commit (>=4.7.0,<5.0.0)"
 ]
+
+[tool.mypy]
+strict = true
+
+[tool.ruff]
+line-length = 88
+
+[tool.ruff.lint]
+# Add the full pycodestyle family on top of the default rules
+extend-select = ["E"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Always measure coverage of the package and list uncovered lines
+addopts = "--cov=book_shelf --cov-report=term-missing"
+
+[tool.coverage.report]
+# Fail when coverage drops below the Definition of Done threshold
+fail_under = 70

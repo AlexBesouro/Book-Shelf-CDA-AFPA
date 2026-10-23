@@ -60,7 +60,8 @@ Les variables de `.env` ne sont lues par PostgreSQL qu'au premier démarrage : p
 
 | Commande | Rôle |
 |---|---|
-| `poetry run pytest --cov` | Lancer les tests avec la couverture (objectif ≥ 70 %) |
+| `poetry run pytest` | Lancer les tests avec la couverture (échoue sous 70 %) |
+| `poetry run fastapi dev src/book_shelf/main.py` | Lancer l'API en développement (http://127.0.0.1:8000/docs) |
 | `poetry run ruff check .` | Analyser le code (lint) |
 | `poetry run ruff format .` | Formater le code |
 | `poetry run mypy src` | Vérifier les types |
