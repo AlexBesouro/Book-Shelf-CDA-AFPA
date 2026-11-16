@@ -1,6 +1,6 @@
 # Note de cadrage — Book Shelf
 
-> Version 0.1 du 20/10/2026 · Auteur : Alex · Statut : proposée au formateur
+> Version 0.2 du 16/11/2026 · Auteur : Alex · Statut : proposée au formateur
 
 ## 1. Contexte
 
@@ -25,8 +25,8 @@ Il en découle des problèmes concrets :
 
 | Rôle | Ce qu'il fait |
 |---|---|
-| Visiteur | Découvre le service, crée un compte |
-| Lecteur | Gère sa bibliothèque : ajoute des livres, change leur statut, écrit ses impressions, consulte ses statistiques ; crée un groupe de lecture, rejoint un groupe |
+| Visiteur | Découvre le service, recherche un livre dans la vitrine, crée un compte |
+| Lecteur | Gère sa bibliothèque : ajoute des livres, change leur statut, écrit ses impressions, consulte ses statistiques ; ajoute des contacts ; crée un groupe de lecture et y invite ses contacts, rejoint un groupe sur invitation |
 | Administrateur | Supprime le compte d'un autre utilisateur, ou le restaure |
 
 | Partie prenante | Attente principale | Position | Comment l'associer |
@@ -37,7 +37,7 @@ Il en découle des problèmes concrets :
 
 ## 4. Périmètre
 
-**Inclus (MVP, version 1.0)** : création de compte et connexion ; ajout d'un livre (titre, auteur, genre, langue) avec son statut (à lire, en cours, lu) ; impressions personnelles par livre (note sur 10, ressenti, citations) ; bibliothèque avec recherche et filtres ; statistiques de lecture (par année, auteur, genre) ; groupes de lecture : un lecteur crée un groupe (nom, description), visible et ouvert aux autres lecteurs ; le groupe choisit un livre et un objectif de rythme (par exemple 3 chapitres par semaine), chaque membre indique sa progression et voit celle des autres ; suppression d'un compte par l'administrateur, restaurable pendant 30 jours.
+**Inclus (MVP, version 1.0)** : vitrine publique (recherche d'un livre dans un catalogue, sans compte) ; création de compte et connexion ; ajout d'un livre (titre, auteur, genre, année de publication, langue d'origine, langue de lecture) avec son statut (à lire, en cours, lu) ; impressions personnelles par livre (note sur 10, ressenti, citations) ; bibliothèque avec recherche et filtres ; statistiques de lecture (par année de lecture, auteur, genre) ; contacts : un lecteur ajoute un autre lecteur à ses contacts grâce au code personnel de celui-ci, qui accepte ou refuse ; un contact ne montre rien de l'autre lecteur (ni livres, ni impressions, ni statistiques) ; groupes de lecture : un lecteur crée un groupe (nom, description) et y invite ses contacts, qui acceptent ou refusent ; un groupe n'est visible que de ses membres ; le groupe choisit un livre et un objectif de rythme (par exemple 3 chapitres par semaine), chaque membre indique sa progression et voit celle des autres ; suppression d'un compte par l'administrateur, restaurable pendant 30 jours.
 
 **Exclus** :
 
@@ -51,7 +51,7 @@ Il en découle des problèmes concrets :
 | Famille | Exigence vérifiable |
 |---|---|
 | Sécurité (ANSSI) | Mots de passe hachés (Argon2) ; entrées validées côté serveur ; chaque route vérifie le rôle et que la donnée appartient au lecteur connecté |
-| RGPD | Seuls un pseudonyme et un courriel sont collectés ; impressions privées, progression visible des seuls membres du groupe ; compte inactif depuis 2 ans supprimé ; compte supprimé par l'administrateur effacé définitivement après 30 jours ; suppression de son compte possible à tout moment |
+| RGPD | Seuls un pseudonyme et un courriel sont collectés ; impressions privées, progression visible des seuls membres du groupe ; un contact ne donne accès à aucune donnée de l'autre lecteur ; compte inactif depuis 2 ans supprimé ; compte supprimé par l'administrateur effacé définitivement après 30 jours ; suppression de son compte possible à tout moment |
 | Accessibilité (RGAA) | RGAA 4.1.2, niveau AA visé ; ajout d'un livre entièrement au clavier |
 | Éco-conception (RGESN) | Une page pèse moins de 500 Ko ; bibliothèque paginée par 20 livres |
 | Compatibilité | Dernières versions de Chrome, Firefox, Safari et Edge ; écrans à partir de 360 px |
@@ -71,8 +71,9 @@ Il en découle des problèmes concrets :
 | Proches acceptent de tester l'application | Leur demander un accord et une date de test (étape 1) |
 | Un hébergement gratuit suffit pour l'API et la base | Déployer une première version minimale (étape 3) |
 | Le nombre de chapitres suffit pour mesurer la progression dans un groupe | Le tester sur 3 livres réels lors des maquettes (étape 2) |
+| Un service gratuit de données de livres suffit pour la vitrine | Y rechercher 10 titres réels lors des maquettes (étape 2) |
 
-**Dépendances** : disponibilité du formateur pour valider et arbitrer ; disponibilité des testeurs ; service d'hébergement choisi.
+**Dépendances** : disponibilité du formateur pour valider et arbitrer ; disponibilité des testeurs ; service d'hébergement choisi ; service externe de données de livres (vitrine).
 
 ## 7. Livrables
 
