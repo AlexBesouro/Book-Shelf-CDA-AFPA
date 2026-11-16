@@ -1,6 +1,6 @@
 # Backlog — Book Shelf
 
-> Version 0.1 du 21/10/2026 · Source unique : base « Backlog » dans Notion · ce fichier en est l'export lisible, mis à jour à chaque fin d'étape.
+> Version 0.2 du 16/11/2026 · Source unique : base « Backlog » dans Notion · ce fichier en est l'export lisible, mis à jour à chaque fin d'étape.
 
 ## Product Backlog
 
@@ -8,7 +8,7 @@
 |---|---|---|---|---|---|---|---|
 | 1 | US-01 | Créer un compte | En tant que visiteur, je veux créer un compte (pseudonyme, courriel, mot de passe), afin de garder mes lectures d'une visite à l'autre | Visiteur | Compte | Must | 5 |
 | 2 | US-02 | Se connecter | En tant que lecteur, je veux me connecter et me déconnecter, afin d'accéder à ma bibliothèque en sécurité | Lecteur | Compte | Must | 5 |
-| 3 | US-03 | Ajouter un livre | En tant que lecteur, je veux ajouter un livre (titre, auteur, genre, langue) avec son statut, afin de ne plus oublier les titres qu'on me recommande | Lecteur | Bibliothèque | Must | 3 |
+| 3 | US-03 | Ajouter un livre | En tant que lecteur, je veux ajouter un livre (titre, auteur, genre, année de publication, langue d'origine, langue de lecture) avec son statut, afin de ne plus oublier les titres qu'on me recommande | Lecteur | Bibliothèque | Must | 3 |
 | 4 | US-04 | Consulter ma bibliothèque | En tant que lecteur, je veux voir la liste de mes livres, afin d'avoir toutes mes lectures au même endroit | Lecteur | Bibliothèque | Must | 3 |
 | 5 | US-05 | Changer le statut | En tant que lecteur, je veux changer le statut d'un livre (à lire, en cours, lu), afin de suivre où j'en suis | Lecteur | Bibliothèque | Must | 2 |
 | 6 | US-06 | Écrire mes impressions | En tant que lecteur, je veux noter un livre sur 10, écrire mon ressenti et des citations, afin de m'en souvenir plus tard | Lecteur | Impressions | Must | 3 |
@@ -18,15 +18,19 @@
 | 10 | US-10 | Modifier ou supprimer un livre | En tant que lecteur, je veux modifier ou supprimer un livre, afin de corriger une erreur de saisie | Lecteur | Bibliothèque | Should | 2 |
 | 11 | US-11 | Supprimer ou restaurer un compte | En tant qu'administrateur, je veux supprimer le compte d'un autre utilisateur ou le restaurer dans les 30 jours, afin d'écarter un usage abusif sans perdre de données par erreur | Administrateur | Administration | Should | 5 |
 | 12 | US-12 | Créer un groupe | En tant que lecteur, je veux créer un groupe de lecture (nom, description), afin de lire avec d'autres | Lecteur | Groupes | Should | 3 |
-| 13 | US-13 | Rejoindre un groupe | En tant que lecteur, je veux rejoindre un groupe, afin de participer à une lecture commune | Lecteur | Groupes | Should | 2 |
-| 14 | US-14 | Rechercher et filtrer | En tant que lecteur, je veux rechercher par titre ou auteur et filtrer par statut, genre ou langue, afin de retrouver un livre dans une grande bibliothèque | Lecteur | Bibliothèque | Could | 3 |
-| 15 | US-15 | Livre et rythme du groupe | En tant que créateur d'un groupe, je veux choisir le livre et un objectif de rythme (ex. 3 chapitres par semaine), afin de donner un cadre commun | Lecteur | Groupes | Could | 3 |
-| 16 | US-16 | Progression dans le groupe | En tant que membre d'un groupe, je veux indiquer ma progression et voir celle des autres, afin de garder le rythme ensemble | Lecteur | Groupes | Could | 5 |
+| 13 | US-22 | Ajouter ou retirer un contact | En tant que lecteur, je veux ajouter un autre lecteur à mes contacts grâce à son code personnel, ou le retirer, afin de choisir qui je peux inviter dans un groupe de lecture | Lecteur | Groupes | Should | 3 |
+| 14 | US-23 | Inviter un contact | En tant que créateur d'un groupe, je veux inviter un de mes contacts dans mon groupe, afin de lire avec lui | Lecteur | Groupes | Should | 2 |
+| 15 | US-13 | Rejoindre un groupe | En tant que lecteur, je veux accepter ou refuser l'invitation à un groupe, afin de participer à une lecture commune | Lecteur | Groupes | Should | 2 |
+| 16 | US-14 | Rechercher et filtrer | En tant que lecteur, je veux rechercher par titre ou auteur et filtrer par statut, genre, année de publication, année de lecture, langue d'origine ou langue de lecture, afin de retrouver un livre dans une grande bibliothèque | Lecteur | Bibliothèque | Could | 3 |
+| 17 | US-15 | Livre et rythme du groupe | En tant que créateur d'un groupe, je veux choisir le livre et un objectif de rythme (ex. 3 chapitres par semaine), afin de donner un cadre commun | Lecteur | Groupes | Could | 3 |
+| 18 | US-16 | Progression dans le groupe | En tant que membre d'un groupe, je veux indiquer ma progression et voir celle des autres, afin de garder le rythme ensemble | Lecteur | Groupes | Could | 5 |
+| 19 | US-20 | Supprimer un groupe | En tant que créateur d'un groupe, je veux supprimer mon groupe, afin de clore une lecture commune | Lecteur | Groupes | Could | 3 |
+| 20 | US-21 | Vitrine | En tant que visiteur, je veux rechercher un livre par titre ou auteur dans la vitrine, afin de découvrir le service avant de créer un compte | Visiteur | Bibliothèque | Could | 5 |
 | — | US-17 | Fonctions sociales | En tant que lecteur, je veux suivre d'autres lecteurs, commenter et discuter dans les groupes | Lecteur | Hors périmètre | Won't (v1) | — |
 | — | US-18 | Recommandations | En tant que lecteur, je veux recevoir des recommandations automatiques de livres | Lecteur | Hors périmètre | Won't (v1) | — |
 | — | US-19 | Liens boutiques | En tant que lecteur, je veux acheter un livre ou voir où l'acheter | Lecteur | Hors périmètre | Won't (v1) | — |
 
-**Répartition** : 16 stories, 54 points → Must 31 points (57 %, sous les 60 %), Should 12 points (22 %), Could 11 points (20 %, la réserve). Aucune story à 8 points ou plus : rien à découper.
+**Répartition** : 20 stories, 67 points → Must 31 points (46 %, sous les 60 %), Should 17 points (25 %), Could 19 points (28 %, la réserve). Aucune story à 8 points ou plus : rien à découper.
 
 ## Estimations
 
@@ -46,10 +50,14 @@
 | US-10 Modifier ou supprimer un livre | 2 | Plus petite : réutilise le formulaire de US-03 |
 | US-11 Supprimer ou restaurer un compte | 5 | Plus grosse : rôle administrateur, suppression logique, restauration et délai de 30 jours |
 | US-12 Créer un groupe | 3 | Comparable : un formulaire et ses validations |
-| US-13 Rejoindre un groupe | 2 | Plus petite : une relation lecteur–groupe, sans règle complexe |
+| US-13 Rejoindre un groupe | 2 | Plus petite : une invitation acceptée ou refusée, sans règle complexe |
 | US-14 Rechercher et filtrer | 3 | Comparable : des paramètres de requête sur la liste de US-04 |
 | US-15 Livre et rythme du groupe | 3 | Comparable : un formulaire réservé au créateur du groupe |
 | US-16 Progression dans le groupe | 5 | Plus grosse : saisie par membre, vue de tous les membres, visibilité limitée au groupe |
+| US-20 Supprimer un groupe | 3 | Comparable : une suppression réservée au créateur, plus le livre conservé chez chaque membre |
+| US-21 Vitrine | 5 | Plus grosse : appel à un service externe de données de livres, page publique ; technique nouvelle pour moi |
+| US-22 Ajouter ou retirer un contact | 3 | Comparable : une demande par code personnel, acceptée ou refusée, et un retrait |
+| US-23 Inviter un contact | 2 | Plus petite : une invitation réservée au créateur, vers un de ses contacts |
 | US-17 à US-19 | — | Won't : on n'estime pas ce qu'on ne fera pas |
 
 **À estimer à deux au prochain bilan** (vote simultané avec le formateur) : US-01, US-02, US-08, US-09, les Must où l'incertitude est la plus forte.
@@ -81,11 +89,11 @@ En tant que lecteur, je veux me connecter et me déconnecter, afin d'accéder à
 
 ### US-03 — Ajouter un livre
 
-En tant que lecteur, je veux ajouter un livre (titre, auteur, genre, langue) avec son statut, afin de ne plus oublier les titres qu'on me recommande.
+En tant que lecteur, je veux ajouter un livre (titre, auteur, genre, année de publication, langue d'origine, langue de lecture) avec son statut, afin de ne plus oublier les titres qu'on me recommande.
 
-- **Étant donné** une bibliothèque vide, **quand** j'ajoute « L'Étranger », Albert Camus, roman, français, « à lire », **alors** il apparaît dans ma bibliothèque avec ce statut.
+- **Étant donné** une bibliothèque vide, **quand** j'ajoute « L'Étranger », Albert Camus, roman, 1942, français (origine), anglais (lecture), « à lire », **alors** il apparaît dans ma bibliothèque avec ce statut.
 - **Étant donné** un titre vide, **quand** je valide, **alors** le livre n'est pas ajouté et le champ « Titre » est signalé.
-- « L'Étranger » (français) et « The Stranger » (anglais) sont deux livres distincts.
+- **Étant donné** « L'Étranger » déjà ajouté, lu en français, **quand** j'ajoute sa lecture en anglais, **alors** la bibliothèque affiche un seul livre.
 - Sans statut choisi, le livre est « à lire ».
 
 *Questions ouvertes* : genres en liste fermée ou texte libre ? Même titre dans la même langue : refusé ou simple avertissement ?
@@ -95,7 +103,7 @@ En tant que lecteur, je veux ajouter un livre (titre, auteur, genre, langue) ave
 En tant que lecteur, je veux voir la liste de mes livres, afin d'avoir toutes mes lectures au même endroit.
 
 - **Étant donné** 25 livres dans ma bibliothèque, **quand** je l'ouvre, **alors** 20 livres s'affichent et la page 2 en contient 5.
-- Chaque livre affiche son titre, son auteur, sa langue et son statut.
+- Chaque livre affiche son titre, son auteur, sa langue d'origine, sa ou ses langues de lecture et son statut.
 - **Étant donné** l'identifiant d'un livre d'un autre lecteur, **quand** je l'appelle dans l'adresse, **alors** la réponse est 404.
 - Bibliothèque vide : le message « Ajoutez votre premier livre » s'affiche avec un lien vers l'ajout.
 
@@ -116,7 +124,7 @@ En tant que lecteur, je veux changer le statut d'un livre (à lire, en cours, lu
 En tant que lecteur, je veux noter un livre sur 10, écrire mon ressenti et des citations, afin de m'en souvenir plus tard.
 
 - **Étant donné** « L'Étranger » lu, **quand** j'enregistre la note 8, un ressenti et 2 citations, **alors** ils sont rattachés à ce livre.
-- **Étant donné** la note 11, **quand** je valide, **alors** elle est refusée avec le message « La note va de 0 à 10 ».
+- **Étant donné** la note 11, **quand** je valide, **alors** elle est refusée avec le message « La note va de 1 à 10 ».
 - Les impressions restent modifiables.
 - Les impressions ne sont visibles que par leur auteur.
 
@@ -138,6 +146,7 @@ En tant que lecteur, je veux voir le nombre de livres lus par année, par auteur
 
 - **Étant donné** 3 livres lus en 2026 (dont 2 de Camus) et 1 en 2025, **quand** j'ouvre mes statistiques, **alors** je vois 2026 : 3, 2025 : 1 et Albert Camus : 2.
 - Seuls les livres au statut « lu » sont comptés.
+- **Étant donné** « L'Étranger » lu en 2025 puis relu en 2026, **quand** j'ouvre mes statistiques, **alors** il compte dans chacune des deux années, et deux fois pour Albert Camus et pour le genre « roman ».
 - **Étant donné** aucun livre lu, **quand** j'ouvre la page, **alors** le message « Pas encore de livre lu » remplace les tableaux.
 - Les trois vues tiennent sur une seule page.
 
@@ -160,7 +169,8 @@ En tant que lecteur, je veux supprimer mon compte, afin que mes données ne soie
 | Ajouter un livre avec son statut en moins de 1 minute | US-03, US-04, US-05, US-10 |
 | Impressions affichées en 2 clics depuis la bibliothèque | US-06, US-07, US-14 (Could) |
 | Livres lus par année, auteur et genre sur une seule page | US-08 (et la date de fin de US-05) |
-| Groupes de lecture (périmètre) | US-12, US-13 (Should), US-15, US-16 (Could) |
+| Groupes de lecture et contacts (périmètre) | US-12, US-13, US-22, US-23 (Should), US-15, US-16, US-20 (Could) |
+| Vitrine publique (périmètre) | US-21 (Could) |
 | Administration des comptes | US-11 (Should) |
 | RGPD : suppression du compte, durée de conservation | US-09, US-11 |
 | Hors périmètre : social, recommandations, boutiques | US-17, US-18, US-19, Won't (v1) |
@@ -169,7 +179,7 @@ Non couvert, par décision : application mobile native (pas de story ; site util
 
 ## Ordre
 
-- **Dépendances** : le compte (US-01, US-02) précède tout, car chaque donnée appartient à un lecteur ; on ne change pas le statut d'un livre qui n'existe pas (US-03 avant US-05).
+- **Dépendances** : le compte (US-01, US-02) précède tout, car chaque donnée appartient à un lecteur ; on ne change pas le statut d'un livre qui n'existe pas (US-03 avant US-05) ; un contact (US-22) précède l'invitation (US-23), qui précède l'entrée dans un groupe (US-13).
 - **Valeur** : la bibliothèque, les impressions et les statistiques (US-03 à US-08) portent les trois objectifs de la note de cadrage ; elles passent avant les groupes.
 - **Risque** : les groupes, plus complexes (plusieurs lecteurs sur un même livre), viennent après la bibliothèque, comme le prévoit la parade du risque 4, avec la progression en Could comme repli.
 - **Urgence** : US-09 (suppression du compte) est un Must avant l'arrivée des testeurs, car leurs données réelles doivent pouvoir être effacées.
