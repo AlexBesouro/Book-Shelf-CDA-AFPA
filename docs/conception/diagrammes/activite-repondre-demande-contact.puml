@@ -1,0 +1,69 @@
+@startuml activite-repondre-demande-contact
+' Activity diagram of the use case "Répondre à une demande de contact"
+
+' Decisions and branch labels: same text size as the actions.
+' The \n and the spaces around a question give its shape more room.
+skinparam ActivityDiamondFontSize 12
+skinparam ArrowFontSize 12
+
+' Layout only: an invisible partition around the actions that follow a change
+' of lane. It moves the bend of the arrow away from the arrow head.
+<style>
+activityDiagram {
+  partition {
+    LineColor transparent
+    FontColor transparent
+    BackgroundColor transparent
+  }
+}
+</style>
+
+|Lecteur|
+start
+:Demander à voir les demandes\nde contact reçues;
+|Système|
+partition " " {
+    :Afficher chaque demande avec le seul\npseudonyme de son auteur (RG-27);
+}
+|Lecteur|
+partition " " {
+    :Répondre à une demande :\naccepter ou refuser;
+}
+|Système|
+partition " " {
+    if (\n    La demande est-elle    \n    encore en attente ?    \n) then (non)
+        :Afficher « Cette demande\nn'existe plus » (RG-33);
+        stop
+    else (oui)
+    endif
+}
+if (\n    Le lecteur a-t-il    \n    accepté la demande ?    \n) then (oui)
+    partition " " {
+        :Créer le contact pour\nles deux lecteurs (RG-28);
+        :Afficher les contacts du lecteur;
+    }
+else (non)
+    partition " " {
+        :Enregistrer le refus, sans\ncréer de contact (RG-28);
+    }
+    partition " " {
+        fork
+            |Service de courriel|
+            partition " " {
+                :Envoyer le message du refus\nà l'auteur de la demande (RG-29);
+                note right
+                    Un seul essai. Si le courriel
+                    ne part pas, le refus reste
+                    enregistré : son auteur le voit
+                    dans l'application.
+                end note
+            }
+        fork again
+            |Système|
+            :Retirer la demande\ndes demandes reçues;
+        end fork
+    }
+endif
+stop
+
+@enduml

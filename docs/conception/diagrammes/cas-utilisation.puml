@@ -1,0 +1,67 @@
+@startuml cas-utilisation
+' Use case diagram of Book Shelf: Must and Should requirements only
+' EX-02 (log in, log out) is not drawn: it is a precondition of the reader's and administrator's cases
+left to right direction
+
+actor "Visiteur" as Visitor
+actor "Lecteur" as Reader
+actor "Administrateur" as Admin
+actor "Horloge" as Clock <<système>>
+actor "Service de courriel" as MailService <<système>>
+
+rectangle "Book Shelf" {
+    package "Compte" {
+        usecase "Créer un compte" as UC01
+        usecase "Supprimer son compte" as UC08
+    }
+    package "Bibliothèque" {
+        usecase "Ajouter un livre" as UC02
+        usecase "Consulter sa bibliothèque" as UC03
+        usecase "Changer le statut d'un livre" as UC04
+        usecase "Modifier les informations d'un livre" as UC09
+        usecase "Supprimer un livre" as UC10
+    }
+    package "Impressions et statistiques" {
+        usecase "Écrire ses impressions sur un livre" as UC05
+        usecase "Retrouver ses impressions sur un livre" as UC06
+        usecase "Consulter ses statistiques de lecture" as UC07
+    }
+    package "Administration" {
+        usecase "Supprimer le compte d'un lecteur" as UC11
+        usecase "Restaurer un compte supprimé" as UC12
+        usecase "Effacer les comptes expirés" as UC19
+    }
+    package "Groupes" {
+        usecase "Créer un groupe de lecture" as UC13
+        usecase "Répondre à une invitation" as UC14
+        usecase "Inviter un contact dans son groupe" as UC17
+    }
+    package "Contacts" {
+        usecase "Envoyer une demande de contact" as UC15
+        usecase "Répondre à une demande de contact" as UC16
+        usecase "Retirer un contact" as UC18
+    }
+}
+
+Visitor --> UC01
+Reader --> UC02
+Reader --> UC03
+Reader --> UC04
+Reader --> UC05
+Reader --> UC06
+Reader --> UC07
+Reader --> UC08
+Reader --> UC09
+Reader --> UC10
+Reader --> UC13
+Reader --> UC14
+Reader --> UC15
+Reader --> UC16
+Reader --> UC17
+Reader --> UC18
+Admin --> UC11
+Admin --> UC12
+Clock --> UC19
+UC16 --> MailService
+
+@enduml
