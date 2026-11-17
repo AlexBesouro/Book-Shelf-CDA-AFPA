@@ -1,6 +1,6 @@
 # Note de cadrage — Book Shelf
 
-> Version 0.2 du 16/11/2026 · Auteur : Alex · Statut : proposée au formateur
+> Version 0.3 du 17/11/2026 · Auteur : Alex · Statut : en cours
 
 ## 1. Contexte
 
@@ -73,7 +73,7 @@ Il en découle des problèmes concrets :
 | Le nombre de chapitres suffit pour mesurer la progression dans un groupe | Le tester sur 3 livres réels lors des maquettes (étape 2) |
 | Un service gratuit de données de livres suffit pour la vitrine | Y rechercher 10 titres réels lors des maquettes (étape 2) |
 
-**Dépendances** : disponibilité du formateur pour valider et arbitrer ; disponibilité des testeurs ; service d'hébergement choisi ; service externe de données de livres (vitrine).
+**Dépendances** : disponibilité du formateur pour valider et arbitrer ; disponibilité des testeurs ; service d'hébergement choisi ; service externe de données de livres (vitrine) ; service d'envoi de courriels (refus d'une demande de contact).
 
 ## 7. Livrables
 

@@ -1,8 +1,8 @@
 # Exigences — Book Shelf
 
-> Version 0.1 du 16/11/2026 · Auteur : Alex · Statut : brouillon, à valider par le formateur
+> Version 0.2 du 17/11/2026 · Auteur : Alex · Statut : brouillon
 >
-> Sources : [note de cadrage v0.2 du 16/11/2026](../note-de-cadrage.md) · [backlog v0.2 du 16/11/2026](../backlog.md) · échanges : aucun à ce jour
+> Sources : [note de cadrage v0.3 du 17/11/2026](../note-de-cadrage.md) · [backlog v0.2 du 16/11/2026](../backlog.md) · échanges : aucun à ce jour
 
 **Objectifs de la [note de cadrage, § 2](../note-de-cadrage.md#2-objectifs)**, cités dans ce document :
 
@@ -62,14 +62,14 @@ Une règle de gestion est toujours vraie, quel que soit l'écran. Son type est l
 | RG-03 | Une connexion refusée ne révèle pas sa cause : la réponse est la même pour un courriel inconnu, un mot de passe faux ou un compte supprimé | Et si | EX-02, EX-09, EX-12 | [Backlog, US-02](../backlog.md#us-02--se-connecter) |
 | RG-04 | Un livre a toujours un titre : sans titre, il n'est ni ajouté ni modifié | Et si | EX-03, EX-10 | [Backlog, US-03](../backlog.md#us-03--ajouter-un-livre) |
 | RG-05 | Le statut d'un livre est toujours « à lire », « en cours » ou « lu » ; sans choix du lecteur, c'est « à lire » | Et si | EX-03, EX-05 | [Backlog, US-03](../backlog.md#us-03--ajouter-un-livre) · [US-05](../backlog.md#us-05--changer-le-statut) |
-| RG-06 | Quand un livre passe « lu », sa date de fin de lecture est enregistrée : la date du jour, que le lecteur peut modifier | Quand | EX-05, EX-08 | [Backlog, US-05](../backlog.md#us-05--changer-le-statut) |
+| RG-06 | Quand un livre passe « lu », ou est ajouté avec ce statut, sa date de fin de lecture est enregistrée : la date du jour, que le lecteur peut modifier | Quand | EX-03, EX-05, EX-08 | [Backlog, US-05](../backlog.md#us-05--changer-le-statut) (décision du 17/11/2026) |
 | RG-07 | La note d'un livre va de 1 à 10 | Combien | EX-06 | [Backlog, US-06](../backlog.md#us-06--écrire-mes-impressions) (décision du 16/11/2026) |
 | RG-08 | Les impressions ne sont visibles et modifiables que par le lecteur qui les a écrites | Qui | EX-06, EX-07 | [Backlog, US-06](../backlog.md#us-06--écrire-mes-impressions) · [Note de cadrage § 5 (RGPD)](../note-de-cadrage.md#5-exigences-non-fonctionnelles) |
 | RG-09 | Quand un livre est supprimé, ses impressions (note, ressenti, citations) sont supprimées avec lui | Quand | EX-11 | [Backlog, US-10](../backlog.md#product-backlog) |
 | RG-10 | Seuls les livres au statut « lu » sont comptés dans les statistiques | Et si | EX-08 | [Backlog, US-08](../backlog.md#us-08--statistiques) |
 | RG-11 | Un livre est compté dans l'année de sa date de fin de lecture, jamais dans son année de publication | Quand | EX-08 | [Note de cadrage § 4 (périmètre)](../note-de-cadrage.md#4-périmètre) (décision du 16/11/2026) |
 | RG-12 | Les statistiques comptent les lectures, pas les livres : un livre lu deux fois compte dans chaque année de lecture, et deux fois pour son auteur et pour son genre | Combien | EX-08 | [Backlog, US-08](../backlog.md#us-08--statistiques) (décision du 16/11/2026) |
-| RG-13 | Un livre lu en plusieurs langues n'apparaît qu'une fois dans la bibliothèque, avec sa langue d'origine et toutes ses langues de lecture | Combien | EX-03, EX-04 | [Backlog, US-03](../backlog.md#us-03--ajouter-un-livre) · [US-04](../backlog.md#us-04--consulter-ma-bibliothèque) (décision du 16/11/2026) |
+| RG-13 | Un livre lu en plusieurs langues n'apparaît qu'une fois dans la bibliothèque, avec sa langue d'origine et toutes ses langues de lecture ; deux saisies de même titre et de même auteur sont le même livre, et une langue de lecture déjà enregistrée pour ce livre est refusée | Combien | EX-03, EX-04 | [Backlog, US-03](../backlog.md#us-03--ajouter-un-livre) · [US-04](../backlog.md#us-04--consulter-ma-bibliothèque) (décisions du 16/11/2026 et du 17/11/2026) |
 | RG-14 | Un lecteur ne voit, ne modifie et ne supprime que ses propres livres | Qui | EX-04, EX-05, EX-07, EX-10, EX-11 | [Backlog, US-04](../backlog.md#us-04--consulter-ma-bibliothèque) · [Note de cadrage § 5 (sécurité)](../note-de-cadrage.md#5-exigences-non-fonctionnelles) |
 | RG-15 | Un lecteur ne supprime son compte qu'après l'avoir confirmé avec son mot de passe : avec un mauvais mot de passe, rien n'est supprimé | Et si | EX-09 | [Backlog, US-09](../backlog.md#us-09--supprimer-mon-compte) |
 | RG-16 | Un compte supprimé par l'administrateur est restaurable pendant 30 jours ; passé ce délai, il est effacé définitivement, avec ses livres et ses impressions | Quand | EX-12, EX-13 | [Note de cadrage § 4 (périmètre)](../note-de-cadrage.md#4-périmètre) · [§ 5 (RGPD)](../note-de-cadrage.md#5-exigences-non-fonctionnelles) |
@@ -85,10 +85,11 @@ Une règle de gestion est toujours vraie, quel que soit l'écran. Son type est l
 | RG-26 | Chaque lecteur a un seul code personnel, différent de celui de tous les autres, et lui seul le voit | Combien | EX-20 | [Note de cadrage § 4 (périmètre)](../note-de-cadrage.md#4-périmètre) (décision du 16/11/2026) |
 | RG-27 | Un contact ne montre de l'autre lecteur que son pseudonyme : ni ses livres, ni ses impressions, ni ses statistiques | Qui | EX-20, EX-21 | [Note de cadrage § 4 (périmètre)](../note-de-cadrage.md#4-périmètre) · [§ 5 (RGPD)](../note-de-cadrage.md#5-exigences-non-fonctionnelles) (décision du 16/11/2026) |
 | RG-28 | Un contact n'existe qu'à partir du moment où la demande est acceptée ; il vaut alors pour les deux lecteurs | Quand | EX-20, EX-21, EX-22 | [Note de cadrage § 4 (périmètre)](../note-de-cadrage.md#4-périmètre) (décision du 16/11/2026) |
-| RG-29 | Après un refus, l'auteur de la demande de contact en est informé et peut envoyer une nouvelle demande, dans la limite de 3 demandes au même lecteur | Et si | EX-20, EX-21 | [Backlog, US-22](../backlog.md#product-backlog) (décision du 16/11/2026) |
+| RG-29 | Après un refus, l'auteur de la demande de contact en est informé par courriel et peut envoyer une nouvelle demande, dans la limite de 3 demandes au même lecteur | Et si | EX-20, EX-21 | [Backlog, US-22](../backlog.md#product-backlog) (décisions du 16/11/2026 et du 17/11/2026) |
 | RG-30 | Quand le contact entre un membre et le créateur d'un groupe est retiré, par l'un ou par l'autre, le membre quitte ce groupe et son nombre de chapitres lus n'y est plus affiché ; retirer un autre contact ne change pas ses groupes | Quand | EX-15, EX-19, EX-24 | [Backlog, US-22](../backlog.md#product-backlog) (décision du 16/11/2026) |
 | RG-31 | Seul le créateur d'un groupe y invite, et seulement des lecteurs qui sont dans ses contacts | Qui | EX-22 | [Note de cadrage § 4 (périmètre)](../note-de-cadrage.md#4-périmètre) (décision du 16/11/2026) |
 | RG-32 | Un groupe (sa page, ses membres, leur nombre de chapitres lus) n'est visible que de ses membres | Qui | EX-14, EX-15, EX-19 | [Note de cadrage § 4 (périmètre)](../note-de-cadrage.md#4-périmètre) (décision du 16/11/2026) |
+| RG-33 | Quand un compte est supprimé, les demandes de contact en attente qu'il a envoyées ou reçues sont supprimées avec lui | Quand | EX-09, EX-12, EX-21 | [Diagramme d'activité, § 4](activites.md#4-ce-que-le-diagramme-a-révélé) (décision du 17/11/2026) |
 
 ## 3. Exigences non fonctionnelles
 
@@ -97,7 +98,7 @@ Une exigence non fonctionnelle s'applique à toute l'application. Les familles s
 | ID | Famille | Exigence | Source | Vérification |
 | --- | --- | --- | --- | --- |
 | ENF-01 | Sécurité | Aucun mot de passe n'est enregistré en clair : seule une empreinte, impossible à inverser, est conservée | [Note de cadrage § 5 (sécurité)](../note-de-cadrage.md#5-exigences-non-fonctionnelles) | Dans les données des comptes, aucune valeur ne permet de relire un mot de passe ; deux comptes créés avec le même mot de passe ont deux empreintes différentes |
-| ENF-02 | Sécurité (RGPD) | Données : seuls un pseudonyme et un courriel sont collectés. Finalité : créer le compte et permettre la connexion. Durée : jusqu'à la suppression du compte, automatique après 2 ans sans connexion. Accès : le courriel n'est vu que du lecteur lui-même et de l'administrateur ; le pseudonyme l'est aussi de ses contacts et des membres de ses groupes | [Note de cadrage § 5 (RGPD)](../note-de-cadrage.md#5-exigences-non-fonctionnelles) | La création de compte ne demande que le pseudonyme, le courriel et le mot de passe ; un compte sans connexion depuis 2 ans est supprimé ; le courriel d'un lecteur ne s'affiche à aucun autre lecteur |
+| ENF-02 | Sécurité (RGPD) | Données : seuls un pseudonyme et un courriel sont collectés. Finalité : créer le compte, permettre la connexion et informer le lecteur du refus de sa demande de contact (RG-29). Durée : jusqu'à la suppression du compte, automatique après 2 ans sans connexion. Accès : le courriel n'est vu que du lecteur lui-même et de l'administrateur, et n'est transmis qu'au service de courriel, pour cet envoi ; le pseudonyme est vu aussi de ses contacts et des membres de ses groupes | [Note de cadrage § 5 (RGPD)](../note-de-cadrage.md#5-exigences-non-fonctionnelles) | La création de compte ne demande que le pseudonyme, le courriel et le mot de passe ; un compte sans connexion depuis 2 ans est supprimé ; le courriel d'un lecteur ne s'affiche à aucun autre lecteur |
 | ENF-03 | Efficacité (performance) | Une page pèse moins de 500 Ko ; une liste affiche au plus 20 livres à la fois | [Note de cadrage § 5 (éco-conception)](../note-de-cadrage.md#5-exigences-non-fonctionnelles) | Poids de la bibliothèque mesuré dans le navigateur : moins de 500 Ko ; avec 25 livres, la première page en affiche 20 et la seconde 5 |
 | ENF-04 | Fiabilité | Aucune erreur technique n'est affichée : en cas de saisie incorrecte ou de panne, un message compréhensible la remplace | [Définition de « terminé », § 3](../definition-of-done.md#3-sécurité-rgpd-et-accessibilité) | Année de publication « abc » saisie, puis base de données arrêtée pendant un ajout : dans les deux cas, un message clair s'affiche, sans texte technique |
 | ENF-05 | Utilisabilité (accessibilité) | L'application vise le niveau AA du RGAA 4.1.2 ; l'ajout d'un livre se fait entièrement au clavier | [Note de cadrage § 5 (accessibilité)](../note-de-cadrage.md#5-exigences-non-fonctionnelles) | Un livre est ajouté sans la souris, de l'ouverture de la bibliothèque à l'enregistrement ; les critères RGAA de niveaux A et AA sont contrôlés sur ce parcours |
@@ -107,36 +108,36 @@ Une exigence non fonctionnelle s'applique à toute l'application. Les familles s
 
 ## 4. Matrice de traçabilité
 
-Une ligne par exigence fonctionnelle. Les colonnes « Cas d'utilisation », « Écrans » et « Tables » seront remplies aux fiches 2, 4 et 7.
+Une ligne par exigence fonctionnelle. Les cas d'utilisation sont ceux de [cas-utilisation.md](cas-utilisation.md) ; les colonnes « Écrans » et « Tables » seront remplies aux fiches 4 et 7.
 
 | Exigence | Objectif | User stories | Cas d'utilisation | Écrans | Tables |
 | --- | --- | --- | --- | --- | --- |
-| EX-01 | — (prérequis : le compte précède tout) | US-01 | À venir (fiche 2) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-02 | — (prérequis : le compte précède tout) | US-02 | À venir (fiche 2) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-03 | O1 | US-03 | À venir (fiche 2) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-04 | O1 | US-04 | À venir (fiche 2) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-05 | O1 | US-05 | À venir (fiche 2) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-06 | O2 | US-06 | À venir (fiche 2) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-07 | O2 | US-07 | À venir (fiche 2) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-08 | O3 | US-08 | À venir (fiche 2) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-09 | — (RGPD : supprimer son compte) | US-09 | À venir (fiche 2) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-10 | O1 | US-10 | À venir (fiche 2) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-11 | O1 | US-10 | À venir (fiche 2) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-12 | — (périmètre : administration) | US-11 | À venir (fiche 2) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-13 | — (périmètre : administration) | US-11 | À venir (fiche 2) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-14 | — (périmètre : groupes) | US-12 | À venir (fiche 2) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-15 | — (périmètre : groupes) | US-13 | À venir (fiche 2) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-16 | — (périmètre : groupes) | US-20 | À venir (fiche 2) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-17 | O2 | US-14 | À venir (fiche 2) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-18 | — (périmètre : groupes) | US-15 | À venir (fiche 2) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-19 | — (périmètre : groupes) | US-16 | À venir (fiche 2) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-20 | — (périmètre : contacts) | US-22 | À venir (fiche 2) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-21 | — (périmètre : contacts) | US-22 | À venir (fiche 2) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-22 | — (périmètre : groupes) | US-23 | À venir (fiche 2) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-23 | — (périmètre : vitrine) | US-21 | À venir (fiche 2) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-24 | — (périmètre : contacts) | US-22 | À venir (fiche 2) | À venir (fiche 4) | À venir (fiche 7) |
-| RG-01 à RG-32 | Celui des exigences qu'elles précisent | Celles de ces exigences | À venir (fiche 2) | À venir (fiche 4) | À venir (fiche 7) |
-| ENF-01 à ENF-08 | — (qualité de toute l'application) | Toutes, par la définition de « terminé » | — (tous les cas) | Tous | À venir (fiche 7) |
+| EX-01 | — (prérequis : le compte précède tout) | US-01 | Créer un compte | À venir (fiche 4) | À venir (fiche 7) |
+| EX-02 | — (prérequis : le compte précède tout) | US-02 | — (précondition des cas du lecteur et de l'administrateur) | À venir (fiche 4) | À venir (fiche 7) |
+| EX-03 | O1 | US-03 | Ajouter un livre | À venir (fiche 4) | À venir (fiche 7) |
+| EX-04 | O1 | US-04 | Consulter sa bibliothèque | À venir (fiche 4) | À venir (fiche 7) |
+| EX-05 | O1 | US-05 | Changer le statut d'un livre | À venir (fiche 4) | À venir (fiche 7) |
+| EX-06 | O2 | US-06 | Écrire ses impressions sur un livre | À venir (fiche 4) | À venir (fiche 7) |
+| EX-07 | O2 | US-07 | Retrouver ses impressions sur un livre | À venir (fiche 4) | À venir (fiche 7) |
+| EX-08 | O3 | US-08 | Consulter ses statistiques de lecture | À venir (fiche 4) | À venir (fiche 7) |
+| EX-09 | — (RGPD : supprimer son compte) | US-09 | Supprimer son compte | À venir (fiche 4) | À venir (fiche 7) |
+| EX-10 | O1 | US-10 | Modifier les informations d'un livre | À venir (fiche 4) | À venir (fiche 7) |
+| EX-11 | O1 | US-10 | Supprimer un livre | À venir (fiche 4) | À venir (fiche 7) |
+| EX-12 | — (périmètre : administration) | US-11 | Supprimer le compte d'un lecteur | À venir (fiche 4) | À venir (fiche 7) |
+| EX-13 | — (périmètre : administration) | US-11 | Restaurer un compte supprimé | À venir (fiche 4) | À venir (fiche 7) |
+| EX-14 | — (périmètre : groupes) | US-12 | Créer un groupe de lecture | À venir (fiche 4) | À venir (fiche 7) |
+| EX-15 | — (périmètre : groupes) | US-13 | Répondre à une invitation | À venir (fiche 4) | À venir (fiche 7) |
+| EX-16 | — (périmètre : groupes) | US-20 | — (Could : cas non dessiné) | À venir (fiche 4) | À venir (fiche 7) |
+| EX-17 | O2 | US-14 | — (Could : cas non dessiné) | À venir (fiche 4) | À venir (fiche 7) |
+| EX-18 | — (périmètre : groupes) | US-15 | — (Could : cas non dessiné) | À venir (fiche 4) | À venir (fiche 7) |
+| EX-19 | — (périmètre : groupes) | US-16 | — (Could : cas non dessiné) | À venir (fiche 4) | À venir (fiche 7) |
+| EX-20 | — (périmètre : contacts) | US-22 | Envoyer une demande de contact | À venir (fiche 4) | À venir (fiche 7) |
+| EX-21 | — (périmètre : contacts) | US-22 | Répondre à une demande de contact | À venir (fiche 4) | À venir (fiche 7) |
+| EX-22 | — (périmètre : groupes) | US-23 | Inviter un contact dans son groupe | À venir (fiche 4) | À venir (fiche 7) |
+| EX-23 | — (périmètre : vitrine) | US-21 | — (Could : cas non dessiné) | À venir (fiche 4) | À venir (fiche 7) |
+| EX-24 | — (périmètre : contacts) | US-22 | Retirer un contact | À venir (fiche 4) | À venir (fiche 7) |
+| RG-01 à RG-33 | Celui des exigences qu'elles précisent | Celles de ces exigences | Ceux de ces exigences ; RG-16 : aussi « Effacer les comptes expirés » | À venir (fiche 4) | À venir (fiche 7) |
+| ENF-01 à ENF-08 | — (qualité de toute l'application) | Toutes, par la définition de « terminé » | — (tous les cas) ; ENF-02 : aussi « Effacer les comptes expirés » | Tous | À venir (fiche 7) |
 
 ## 5. Historique
 
@@ -148,3 +149,7 @@ Une ligne par exigence fonctionnelle. Les colonnes « Cas d'utilisation », « �
 | 16/11/2026 | 0.1 | Recherche par titre ou auteur, filtres sur les autres champs (EX-17) ; note de 1 à 10 au lieu de 0 à 10 (RG-07) |
 | 16/11/2026 | 0.1 | Groupes : nom unique, suppression par le créateur, progression en nombre de chapitres (EX-16, EX-19, RG-18, RG-24, RG-25) |
 | 16/11/2026 | 0.1 | Ajouts au périmètre : vitrine publique, contacts par code personnel, groupes sur invitation (EX-15 modifiée, EX-20 à EX-24, RG-21, RG-26 à RG-32) |
+| 17/11/2026 | 0.2 | Refus d'une demande de contact annoncé par courriel : seconde finalité du courriel, transmis au service de courriel (RG-29, ENF-02) |
+| 17/11/2026 | 0.2 | Matrice : colonne « Cas d'utilisation » remplie, 19 cas décrits dans [cas-utilisation.md](cas-utilisation.md) |
+| 17/11/2026 | 0.2 | Livre : même titre et même auteur, même livre ; langue de lecture déjà enregistrée refusée ; date de fin enregistrée aussi à l'ajout d'un livre « lu » (RG-06, RG-13) |
+| 17/11/2026 | 0.2 | Demandes de contact en attente supprimées avec le compte de leur auteur ou de leur destinataire : règle trouvée par le diagramme d'activité (RG-33) |
