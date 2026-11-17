@@ -11,8 +11,13 @@
   "ruff.importStrategy": "fromEnvironment",
   "mypy-type-checker.importStrategy": "fromEnvironment",
 
-  // Ruler at Ruff's default line length
-  "editor.rulers": [88],
+  // Ruler at 110 columns
+  "editor.rulers": [110],
+
+  // PlantUML: export each diagram as SVG, next to its .puml source
+  "plantuml.exportFormat": "svg",
+  "plantuml.exportOutDir": ".",
+  "plantuml.exportSubFolder": false,
 
   // Tests: pytest in the tests/ folder
   "python.testing.pytestEnabled": true,
