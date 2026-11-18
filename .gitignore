@@ -29,3 +29,7 @@ Thumbs.db
 /sandbox
 /CDA_examen
 /docs/conception/verifications.md
+/docs/journal-de-bord.md
+
+# Mocodo : positions des boîtes, recalculées à chaque dessin
+/docs/conception/diagrammes/*_geo.json
