@@ -1,6 +1,6 @@
 # Backlog — Book Shelf
 
-> Version 0.2 du 16/11/2026 · Source unique : base « Backlog » dans Notion · ce fichier en est l'export lisible, mis à jour à chaque fin d'étape.
+> Version 0.3 du 18/11/2026 · Source unique : base « Backlog » dans Notion · ce fichier en est l'export lisible, mis à jour à chaque fin d'étape.
 
 ## Product Backlog
 
@@ -93,7 +93,7 @@ En tant que lecteur, je veux ajouter un livre (titre, auteur, genre, année de p
 
 - **Étant donné** une bibliothèque vide, **quand** j'ajoute « L'Étranger », Albert Camus, roman, 1942, français (origine), anglais (lecture), « à lire », **alors** il apparaît dans ma bibliothèque avec ce statut.
 - **Étant donné** un titre vide, **quand** je valide, **alors** le livre n'est pas ajouté et le champ « Titre » est signalé.
-- **Étant donné** « L'Étranger » déjà ajouté, lu en français, **quand** j'ajoute sa lecture en anglais, **alors** la bibliothèque affiche un seul livre.
+- **Étant donné** « L'Étranger » déjà ajouté, lu en français, **quand** je l'ajoute en anglais, **alors** la bibliothèque affiche deux livres.
 - Sans statut choisi, le livre est « à lire ».
 
 *Questions ouvertes* : genres en liste fermée ou texte libre ? Même titre dans la même langue : refusé ou simple avertissement ?
@@ -103,7 +103,7 @@ En tant que lecteur, je veux ajouter un livre (titre, auteur, genre, année de p
 En tant que lecteur, je veux voir la liste de mes livres, afin d'avoir toutes mes lectures au même endroit.
 
 - **Étant donné** 25 livres dans ma bibliothèque, **quand** je l'ouvre, **alors** 20 livres s'affichent et la page 2 en contient 5.
-- Chaque livre affiche son titre, son auteur, sa langue d'origine, sa ou ses langues de lecture et son statut.
+- Chaque livre affiche son titre, son auteur, sa langue d'origine, sa langue de lecture et son statut.
 - **Étant donné** l'identifiant d'un livre d'un autre lecteur, **quand** je l'appelle dans l'adresse, **alors** la réponse est 404.
 - Bibliothèque vide : le message « Ajoutez votre premier livre » s'affiche avec un lien vers l'ajout.
 
@@ -146,7 +146,7 @@ En tant que lecteur, je veux voir le nombre de livres lus par année, par auteur
 
 - **Étant donné** 3 livres lus en 2026 (dont 2 de Camus) et 1 en 2025, **quand** j'ouvre mes statistiques, **alors** je vois 2026 : 3, 2025 : 1 et Albert Camus : 2.
 - Seuls les livres au statut « lu » sont comptés.
-- **Étant donné** « L'Étranger » lu en 2025 puis relu en 2026, **quand** j'ouvre mes statistiques, **alors** il compte dans chacune des deux années, et deux fois pour Albert Camus et pour le genre « roman ».
+- **Étant donné** « L'Étranger » lu en français en 2025 et en anglais en 2026, **quand** j'ouvre mes statistiques, **alors** il compte dans chacune des deux années, et deux fois pour Albert Camus et pour le genre « roman ».
 - **Étant donné** aucun livre lu, **quand** j'ouvre la page, **alors** le message « Pas encore de livre lu » remplace les tableaux.
 - Les trois vues tiennent sur une seule page.
 

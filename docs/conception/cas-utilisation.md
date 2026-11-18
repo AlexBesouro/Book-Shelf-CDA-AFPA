@@ -1,8 +1,8 @@
 # Cas d'utilisation — Book Shelf
 
-> Version 0.1 du 17/11/2026 · Auteur : Alex · Statut : brouillon
+> Version 0.2 du 18/11/2026 · Auteur : Alex · Statut : brouillon
 >
-> Sources : [exigences v0.2 du 17/11/2026](exigences.md) · [note de cadrage v0.3 du 17/11/2026](../note-de-cadrage.md) · [backlog v0.2 du 16/11/2026](../backlog.md)
+> Sources : [exigences v0.4 du 18/11/2026](exigences.md) · [note de cadrage v0.3 du 17/11/2026](../note-de-cadrage.md) · [backlog v0.3 du 18/11/2026](../backlog.md)
 
 ## 1. Acteurs
 
@@ -60,7 +60,7 @@ Les cas décrits en entier sont ceux qui portent le plus de règles de gestion.
 
 **Scénarios alternatifs** :
 
-- A1 — Livre déjà présent, autre langue de lecture (étape 4) : le système reconnaît le livre à son titre et à son auteur ; il ajoute la langue de lecture au livre existant, sans créer de second livre (RG-13). Le scénario reprend à l'étape 6.
+- A1 — Même titre et même auteur, autre langue de lecture (étape 4) : c'est un autre livre ; le système l'enregistre (RG-13). Le scénario reprend à l'étape 5.
 - A2 — Statut « lu » choisi (étape 3) : le système enregistre aussi la date de fin de lecture, la date du jour, que le lecteur peut modifier (RG-06).
 
 **Exceptions** :

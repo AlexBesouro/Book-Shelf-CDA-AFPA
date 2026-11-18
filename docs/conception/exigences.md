@@ -1,8 +1,8 @@
 # Exigences — Book Shelf
 
-> Version 0.3 du 18/11/2026 · Auteur : Alex · Statut : brouillon
+> Version 0.4 du 18/11/2026 · Auteur : Alex · Statut : brouillon
 >
-> Sources : [note de cadrage v0.3 du 17/11/2026](../note-de-cadrage.md) · [backlog v0.2 du 16/11/2026](../backlog.md) · échanges : aucun à ce jour
+> Sources : [note de cadrage v0.3 du 17/11/2026](../note-de-cadrage.md) · [backlog v0.3 du 18/11/2026](../backlog.md) · échanges : aucun à ce jour
 
 **Objectifs de la [note de cadrage, § 2](../note-de-cadrage.md#2-objectifs)**, cités dans ce document :
 
@@ -17,11 +17,11 @@
 | EX-01 | Le visiteur crée un compte avec un pseudonyme, un courriel et un mot de passe | Must | [Note de cadrage § 4 (périmètre)](../note-de-cadrage.md#4-périmètre) | Avec un courriel jamais utilisé, le compte est créé et le visiteur est connecté |
 | EX-02 | Le lecteur se connecte à son compte et s'en déconnecte | Must | [Note de cadrage § 4 (périmètre)](../note-de-cadrage.md#4-périmètre) | Bon courriel et bon mot de passe : sa bibliothèque s'affiche. Après déconnexion, l'adresse de la bibliothèque renvoie vers la page de connexion |
 | EX-03 | Le lecteur ajoute un livre (titre, auteur, genre, année de publication, langue d'origine, langue de lecture) à sa bibliothèque, avec un statut | Must | [Note de cadrage § 2, objectif O1](../note-de-cadrage.md#2-objectifs) · [§ 4 (périmètre)](../note-de-cadrage.md#4-périmètre) | « L'Étranger », Albert Camus, roman, 1942, français (origine), anglais (lecture), « à lire » : le livre apparaît dans la bibliothèque avec ce statut, en moins de 1 minute de saisie |
-| EX-04 | Le lecteur consulte la liste de ses livres | Must | [Note de cadrage § 2, objectif O1](../note-de-cadrage.md#2-objectifs) | Avec 25 livres enregistrés, les 25 sont consultables, chacun avec son titre, son auteur, sa langue d'origine, sa ou ses langues de lecture et son statut ; un livre lu en deux langues n'apparaît qu'une fois |
+| EX-04 | Le lecteur consulte la liste de ses livres | Must | [Note de cadrage § 2, objectif O1](../note-de-cadrage.md#2-objectifs) | Avec 25 livres enregistrés, les 25 sont consultables, chacun avec son titre, son auteur, sa langue d'origine, sa langue de lecture et son statut ; le même livre lu en deux langues apparaît deux fois |
 | EX-05 | Le lecteur change le statut d'un livre (à lire, en cours, lu) | Must | [Note de cadrage § 2, objectif O1](../note-de-cadrage.md#2-objectifs) | « L'Étranger » passe de « en cours » à « lu » : le nouveau statut s'affiche dans la bibliothèque, avec la date du jour comme date de fin de lecture |
-| EX-06 | Le lecteur enregistre ses impressions sur un livre : une note sur 10, un ressenti, des citations | Must | [Note de cadrage § 2, objectif O2](../note-de-cadrage.md#2-objectifs) | Note 8, un ressenti et 2 citations enregistrés pour « L'Étranger » : ils s'affichent sur la fiche de ce livre |
+| EX-06 | Le lecteur enregistre ses impressions sur un livre : une note sur 10 et un seul texte, pour son ressenti et ses citations | Must | [Note de cadrage § 2, objectif O2](../note-de-cadrage.md#2-objectifs) (décision du 18/11/2026) | Note 8 et un texte avec 2 citations enregistrés pour « L'Étranger » : ils s'affichent sur la fiche de ce livre |
 | EX-07 | Le lecteur consulte la fiche d'un livre, avec ses impressions | Must | [Note de cadrage § 2, objectif O2](../note-de-cadrage.md#2-objectifs) | Depuis la bibliothèque, la note, le ressenti et les citations de « L'Étranger » s'affichent en 2 clics au plus |
-| EX-08 | Le lecteur consulte le nombre de livres qu'il a lus, par année de lecture, par auteur et par genre | Must | [Note de cadrage § 2, objectif O3](../note-de-cadrage.md#2-objectifs) | Avec 3 livres lus en 2026 (dont 2 de Camus) et 1 en 2025, une seule page affiche 2026 : 3, 2025 : 1 et Albert Camus : 2 ; un livre lu en 2025 puis en 2026 compte dans chacune des deux années, et deux fois pour son auteur et son genre |
+| EX-08 | Le lecteur consulte le nombre de livres qu'il a lus, par année de lecture, par auteur et par genre | Must | [Note de cadrage § 2, objectif O3](../note-de-cadrage.md#2-objectifs) | Avec 3 livres lus en 2026 (dont 2 de Camus) et 1 en 2025, une seule page affiche 2026 : 3, 2025 : 1 et Albert Camus : 2 ; le même livre lu en français en 2025 et en anglais en 2026 compte dans chacune des deux années, et deux fois pour son auteur et son genre |
 | EX-09 | Le lecteur supprime son compte | Must | [Note de cadrage § 5 (RGPD)](../note-de-cadrage.md#5-exigences-non-fonctionnelles) | Après confirmation avec son mot de passe, son compte, ses livres et ses impressions sont effacés ; la connexion avec ce courriel échoue |
 | EX-10 | Le lecteur modifie les informations d'un livre | Should | [Backlog, US-10](../backlog.md#product-backlog) | Le titre « L'Etranger » est corrigé en « L'Étranger » : la bibliothèque affiche le titre corrigé |
 | EX-11 | Le lecteur supprime un livre de sa bibliothèque | Should | [Backlog, US-10](../backlog.md#product-backlog) | « L'Étranger » supprimé n'apparaît plus dans la bibliothèque ni dans les statistiques |
@@ -68,8 +68,8 @@ Une règle de gestion est toujours vraie, quel que soit l'écran. Son type est l
 | RG-09 | Quand un livre est supprimé, ses impressions (note, ressenti, citations) sont supprimées avec lui | Quand | EX-11 | [Backlog, US-10](../backlog.md#product-backlog) |
 | RG-10 | Seuls les livres au statut « lu » sont comptés dans les statistiques | Et si | EX-08 | [Backlog, US-08](../backlog.md#us-08--statistiques) |
 | RG-11 | Un livre est compté dans l'année de sa date de fin de lecture, jamais dans son année de publication | Quand | EX-08 | [Note de cadrage § 4 (périmètre)](../note-de-cadrage.md#4-périmètre) (décision du 16/11/2026) |
-| RG-12 | Les statistiques comptent les lectures, pas les livres : un livre lu deux fois compte dans chaque année de lecture, et deux fois pour son auteur et pour son genre | Combien | EX-08 | [Backlog, US-08](../backlog.md#us-08--statistiques) (décision du 16/11/2026) |
-| RG-13 | Un livre lu en plusieurs langues n'apparaît qu'une fois dans la bibliothèque, avec sa langue d'origine et toutes ses langues de lecture ; deux saisies de même titre et de même auteur sont le même livre, et une langue de lecture déjà enregistrée pour ce livre est refusée | Combien | EX-03, EX-04 | [Backlog, US-03](../backlog.md#us-03--ajouter-un-livre) · [US-04](../backlog.md#us-04--consulter-ma-bibliothèque) (décisions du 16/11/2026 et du 17/11/2026) |
+| RG-12 | Les statistiques comptent chaque livre « lu » une seule fois ; le même livre lu dans deux langues est deux livres, et compte deux fois | Combien | EX-08 | [Backlog, US-08](../backlog.md#us-08--statistiques) (décisions du 16/11/2026 et du 18/11/2026) |
+| RG-13 | Le même livre lu dans une autre langue est un autre livre de la bibliothèque ; un livre de même titre, même auteur et même langue de lecture qu'un livre déjà présent est refusé | Combien | EX-03, EX-04 | [Backlog, US-03](../backlog.md#us-03--ajouter-un-livre) · [US-04](../backlog.md#us-04--consulter-ma-bibliothèque) (décisions du 17/11/2026 et du 18/11/2026) |
 | RG-14 | Un lecteur ne voit, ne modifie et ne supprime que ses propres livres | Qui | EX-04, EX-05, EX-07, EX-10, EX-11 | [Backlog, US-04](../backlog.md#us-04--consulter-ma-bibliothèque) · [Note de cadrage § 5 (sécurité)](../note-de-cadrage.md#5-exigences-non-fonctionnelles) |
 | RG-15 | Un lecteur ne supprime son compte qu'après l'avoir confirmé avec son mot de passe : avec un mauvais mot de passe, rien n'est supprimé | Et si | EX-09 | [Backlog, US-09](../backlog.md#us-09--supprimer-mon-compte) |
 | RG-16 | Un compte supprimé par l'administrateur est restaurable pendant 30 jours ; passé ce délai, il est effacé définitivement, avec ses livres et ses impressions | Quand | EX-12, EX-13 | [Note de cadrage § 4 (périmètre)](../note-de-cadrage.md#4-périmètre) · [§ 5 (RGPD)](../note-de-cadrage.md#5-exigences-non-fonctionnelles) |
@@ -90,6 +90,8 @@ Une règle de gestion est toujours vraie, quel que soit l'écran. Son type est l
 | RG-31 | Seul le créateur d'un groupe y invite, et seulement des lecteurs qui sont dans ses contacts | Qui | EX-22 | [Note de cadrage § 4 (périmètre)](../note-de-cadrage.md#4-périmètre) (décision du 16/11/2026) |
 | RG-32 | Un groupe (sa page, ses membres, leur nombre de chapitres lus) n'est visible que de ses membres | Qui | EX-14, EX-15, EX-19 | [Note de cadrage § 4 (périmètre)](../note-de-cadrage.md#4-périmètre) (décision du 16/11/2026) |
 | RG-33 | Quand un compte est supprimé, les demandes de contact en attente qu'il a envoyées ou reçues sont supprimées avec lui | Quand | EX-09, EX-12, EX-21 | [Diagramme d'activité, § 4](activites.md#4-ce-que-le-diagramme-a-révélé) (décision du 17/11/2026) |
+| RG-34 | Un lecteur n'envoie pas de demande de contact à lui-même | Qui | EX-20 | [Modèle conceptuel des données, § 4](mcd.md#4-vérifications) (décision du 18/11/2026) |
+| RG-35 | Quand un compte est supprimé, les groupes qu'il a créés et ses invitations sont supprimés avec lui | Quand | EX-09, EX-12, EX-14, EX-15 | [Modèle conceptuel des données, § 4](mcd.md#4-vérifications) (décision du 18/11/2026) |
 
 ## 3. Exigences non fonctionnelles
 
@@ -136,7 +138,7 @@ Une ligne par exigence fonctionnelle. Les cas d'utilisation sont ceux de [cas-ut
 | EX-22 | — (périmètre : groupes) | US-23 | Inviter un contact dans son groupe | À venir (fiche 4) | À venir (fiche 7) |
 | EX-23 | — (périmètre : vitrine) | US-21 | — (Could : cas non dessiné) | À venir (fiche 4) | À venir (fiche 7) |
 | EX-24 | — (périmètre : contacts) | US-22 | Retirer un contact | À venir (fiche 4) | À venir (fiche 7) |
-| RG-01 à RG-33 | Celui des exigences qu'elles précisent | Celles de ces exigences | Ceux de ces exigences ; RG-16 : aussi « Effacer les comptes expirés » | À venir (fiche 4) | À venir (fiche 7) |
+| RG-01 à RG-35 | Celui des exigences qu'elles précisent | Celles de ces exigences | Ceux de ces exigences ; RG-16 : aussi « Effacer les comptes expirés » | À venir (fiche 4) | À venir (fiche 7) |
 | ENF-01 à ENF-08 | — (qualité de toute l'application) | Toutes, par la définition de « terminé » | — (tous les cas) ; ENF-02 : aussi « Effacer les comptes expirés » | Tous | À venir (fiche 7) |
 
 ## 5. Historique
@@ -154,3 +156,6 @@ Une ligne par exigence fonctionnelle. Les cas d'utilisation sont ceux de [cas-ut
 | 17/11/2026 | 0.2 | Livre : même titre et même auteur, même livre ; langue de lecture déjà enregistrée refusée ; date de fin enregistrée aussi à l'ajout d'un livre « lu » (RG-06, RG-13) |
 | 17/11/2026 | 0.2 | Demandes de contact en attente supprimées avec le compte de leur auteur ou de leur destinataire : règle trouvée par le diagramme d'activité (RG-33) |
 | 18/11/2026 | 0.3 | Budget d'une page : 30 requêtes au chargement, cache vidé, connexion 3G ; accessibilité contrôlée sur cinq écrans (ENF-03, ENF-05) : décisions de [accessibilite-eco-conception.md](accessibilite-eco-conception.md) |
+| 18/11/2026 | 0.4 | Impressions : une note et un seul texte par livre, pour le ressenti et les citations (EX-06) : décision prise avec le dictionnaire des données de [mcd.md](mcd.md) |
+| 18/11/2026 | 0.4 | Livre : le même livre lu dans une autre langue est un autre livre ; une relecture ne compte pas deux fois (EX-04, EX-08, RG-12, RG-13) : décision prise avec le modèle des données |
+| 18/11/2026 | 0.4 | Deux règles trouvées par le modèle des données : pas de demande de contact à soi-même, groupes supprimés avec le compte de leur créateur (RG-34, RG-35) |
