@@ -1,0 +1,20 @@
+% Conceptual data model (MCD) of Book Shelf: Must and Should requirements
+% Layout: lines that follow each other make one row, an empty line starts a new row,
+% and a line with only ":" leaves an empty place in the grid.
+BOOK: book_id, title, author, genre, publication_year, original_language, reading_language, status, finished_on, rating, review
+OWN, 0N USER, 11 BOOK
+USER: user_id, username, email, password_hash, role, personal_code, last_login_on, deleted_on
+CREATE, 0N USER, 11 GROUP
+GROUP: group_id, group_name, group_description
+
+:
+SEND, 0N USER, 11 CONTACT_REQUEST
+RECEIVE, 0N USER, 11 CONTACT_REQUEST
+INVITE, 0N USER, 0N GROUP: group_invitation_status
+:
+
+:
+:
+CONTACT_REQUEST: contact_request_id, contact_request_status
+:
+:

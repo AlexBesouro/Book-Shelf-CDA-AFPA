@@ -80,7 +80,6 @@ Les réglages personnels (thème, police, raccourcis) restent dans vos paramètr
 - [Backlog](docs/backlog.md) (le suivi se fait dans Notion)
 - [Plan de versions](docs/plan-de-versions.md)
 - [Definition of Done](docs/definition-of-done.md)
-- [Journal de bord](docs/journal-de-bord.md)
 
 ## Contribuer
 
