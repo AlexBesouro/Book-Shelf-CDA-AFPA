@@ -56,6 +56,17 @@ Les variables de `.env` ne sont lues par PostgreSQL qu'au premier démarrage : p
 
 **Connexion à la base (DBeaver ou autre client)** : hôte `localhost`, port `POSTGRES_PORT` (5432 par défaut), base, utilisateur et mot de passe de votre `.env`. Si un PostgreSQL est déjà installé sur la machine, choisir un autre port (par exemple 5433).
 
+## Base de données
+
+Le schéma `book_shelf` est créé par un script, exécuté dans le conteneur `db` (services démarrés) :
+
+```bash
+docker compose cp db/schema.sql db:/tmp/schema.sql
+docker compose exec db sh -c 'psql -U "$POSTGRES_USER" -d "$POSTGRES_DB" -v ON_ERROR_STOP=1 -f /tmp/schema.sql'
+```
+
+Le script supprime le schéma puis le recrée : il **efface ses données**, et ne s'exécute que sur une base de développement. Le jeu d'essai et les vérifications sont décrits dans [docs/conception/mld.md, § 4](docs/conception/mld.md#4-exécution-et-vérification).
+
 ## Commandes utiles
 
 | Commande | Rôle |
@@ -80,6 +91,7 @@ Les réglages personnels (thème, police, raccourcis) restent dans vos paramètr
 - [Backlog](docs/backlog.md) (le suivi se fait dans Notion)
 - [Plan de versions](docs/plan-de-versions.md)
 - [Definition of Done](docs/definition-of-done.md)
+- [Dossier de conception](docs/conception/README.md) : exigences, cas d'utilisation, modèle des données
 
 ## Contribuer
 
