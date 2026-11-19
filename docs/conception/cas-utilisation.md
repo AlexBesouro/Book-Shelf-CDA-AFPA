@@ -1,8 +1,8 @@
 # Cas d'utilisation — Book Shelf
 
-> Version 0.2 du 18/11/2026 · Auteur : Alex · Statut : brouillon
+> Version 0.3 du 19/11/2026 · Auteur : Alex · Statut : brouillon
 >
-> Sources : [exigences v0.4 du 18/11/2026](exigences.md) · [note de cadrage v0.3 du 17/11/2026](../note-de-cadrage.md) · [backlog v0.3 du 18/11/2026](../backlog.md)
+> Sources : [exigences v0.5 du 19/11/2026](exigences.md) · [note de cadrage v0.3 du 17/11/2026](../note-de-cadrage.md) · [backlog v0.4 du 19/11/2026](../backlog.md)
 
 ## 1. Acteurs
 
@@ -44,7 +44,7 @@ Les cas décrits en entier sont ceux qui portent le plus de règles de gestion.
 | Acteur principal | Lecteur |
 | Acteurs secondaires | Aucun |
 | Objectif | Garder la trace d'un livre dans sa bibliothèque, avec son statut |
-| Exigences | EX-03 ; RG-04, RG-05, RG-06, RG-13 ; ENF-04, ENF-05 |
+| Exigences | EX-03 ; RG-04, RG-05, RG-06, RG-13, RG-36 ; ENF-04, ENF-05 |
 | Préconditions | Le lecteur est connecté |
 | Postconditions (succès) | Le livre figure une seule fois dans la bibliothèque du lecteur, avec ses informations et son statut |
 | Postconditions (échec) | Rien n'est enregistré ; le lecteur sait pourquoi |
@@ -54,7 +54,7 @@ Les cas décrits en entier sont ceux qui portent le plus de règles de gestion.
 1. Le lecteur demande à ajouter un livre.
 2. Le système demande le titre, l'auteur, le genre, l'année de publication, la langue d'origine et la langue de lecture, et propose le statut à choisir : « à lire » (par défaut), « en cours » ou « lu » (RG-05).
 3. Le lecteur renseigne ces informations, choisit un statut et demande l'ajout.
-4. Le système vérifie que le titre est renseigné (RG-04), que l'année de publication est valide et que le livre n'est pas déjà dans la bibliothèque du lecteur (RG-13).
+4. Le système vérifie que le titre et l'auteur sont renseignés (RG-04, RG-36), que l'année de publication est valide et que le livre n'est pas déjà dans la bibliothèque du lecteur (RG-13).
 5. Le système enregistre le livre dans la bibliothèque du lecteur.
 6. Le système affiche la bibliothèque, où le livre apparaît avec son statut.
 
@@ -65,7 +65,7 @@ Les cas décrits en entier sont ceux qui portent le plus de règles de gestion.
 
 **Exceptions** :
 
-- E1 — Titre absent (étape 4) : le système affiche « Le titre est obligatoire » ; rien n'est enregistré (RG-04).
+- E1 — Titre ou auteur absent (étape 4) : le système affiche « Le titre est obligatoire » ou « L'auteur est obligatoire » ; rien n'est enregistré (RG-04, RG-36).
 - E2 — Année de publication non valide (étape 4) : le système affiche « L'année de publication doit être une année, par exemple 1942 » ; rien n'est enregistré (ENF-04).
 - E3 — Livre déjà présent dans la même langue de lecture (étape 4) : le système affiche « Ce livre est déjà dans votre bibliothèque » ; rien n'est enregistré (RG-13).
 - E4 — Enregistrement impossible (étape 5) : le système affiche « Le livre n'a pas pu être ajouté. Réessayez dans un instant », sans texte technique ; rien n'est enregistré (ENF-04).

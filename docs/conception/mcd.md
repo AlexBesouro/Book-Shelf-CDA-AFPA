@@ -1,8 +1,8 @@
 # Modèle conceptuel des données — Book Shelf
 
-> Version 0.1 du 18/11/2026 · Auteur : Alex · Statut : brouillon
+> Version 0.2 du 19/11/2026 · Auteur : Alex · Statut : brouillon
 >
-> Sources : [exigences v0.4 du 18/11/2026](exigences.md) · [cas d'utilisation v0.2 du 18/11/2026](cas-utilisation.md)
+> Sources : [exigences v0.5 du 19/11/2026](exigences.md) · [cas d'utilisation v0.3 du 19/11/2026](cas-utilisation.md)
 
 ## 1. Dictionnaire des données
 
@@ -20,7 +20,7 @@ Les données des exigences « Must » et « Should ». Les codes sont en anglais
 | deleted_on | Date de suppression par l'administrateur | Date | | Vide si le compte est actif (RG-16) |
 | book_id | Identifiant d'un livre | N | | Identifiant |
 | title | Titre du livre | AN | | Obligatoire (RG-04) |
-| author | Nom de l'auteur | AN | | Sert à reconnaître un même livre (RG-13) |
+| author | Nom de l'auteur | AN | | Obligatoire (RG-36) ; sert à reconnaître un même livre (RG-13) |
 | genre | Genre du livre | AN | | |
 | publication_year | Année de publication | N | | Une année, par exemple 1942 |
 | original_language | Langue dans laquelle le livre a été écrit | AN | | |

@@ -1,8 +1,8 @@
 # Exigences — Book Shelf
 
-> Version 0.4 du 18/11/2026 · Auteur : Alex · Statut : brouillon
+> Version 0.5 du 19/11/2026 · Auteur : Alex · Statut : brouillon
 >
-> Sources : [note de cadrage v0.3 du 17/11/2026](../note-de-cadrage.md) · [backlog v0.3 du 18/11/2026](../backlog.md) · échanges : aucun à ce jour
+> Sources : [note de cadrage v0.3 du 17/11/2026](../note-de-cadrage.md) · [backlog v0.4 du 19/11/2026](../backlog.md) · échanges : aucun à ce jour
 
 **Objectifs de la [note de cadrage, § 2](../note-de-cadrage.md#2-objectifs)**, cités dans ce document :
 
@@ -92,6 +92,7 @@ Une règle de gestion est toujours vraie, quel que soit l'écran. Son type est l
 | RG-33 | Quand un compte est supprimé, les demandes de contact en attente qu'il a envoyées ou reçues sont supprimées avec lui | Quand | EX-09, EX-12, EX-21 | [Diagramme d'activité, § 4](activites.md#4-ce-que-le-diagramme-a-révélé) (décision du 17/11/2026) |
 | RG-34 | Un lecteur n'envoie pas de demande de contact à lui-même | Qui | EX-20 | [Modèle conceptuel des données, § 4](mcd.md#4-vérifications) (décision du 18/11/2026) |
 | RG-35 | Quand un compte est supprimé, les groupes qu'il a créés et ses invitations sont supprimés avec lui | Quand | EX-09, EX-12, EX-14, EX-15 | [Modèle conceptuel des données, § 4](mcd.md#4-vérifications) (décision du 18/11/2026) |
+| RG-36 | Un livre a toujours un auteur : sans auteur, il n'est ni ajouté ni modifié | Et si | EX-03, EX-10 | [Modèle physique des données, § 3](mld.md#3-modèle-physique) (décision du 19/11/2026) |
 
 ## 3. Exigences non fonctionnelles
 
@@ -110,36 +111,36 @@ Une exigence non fonctionnelle s'applique à toute l'application. Les familles s
 
 ## 4. Matrice de traçabilité
 
-Une ligne par exigence fonctionnelle. Les cas d'utilisation sont ceux de [cas-utilisation.md](cas-utilisation.md) ; les colonnes « Écrans » et « Tables » seront remplies aux fiches 4 et 7.
+Une ligne par exigence fonctionnelle. Les cas d'utilisation sont ceux de [cas-utilisation.md](cas-utilisation.md) ; les tables sont celles de [mld.md](mld.md) ; les écrans sont ceux de [accessibilite-eco-conception.md](accessibilite-eco-conception.md) ; « — » : aucun écran défini.
 
 | Exigence | Objectif | User stories | Cas d'utilisation | Écrans | Tables |
 | --- | --- | --- | --- | --- | --- |
-| EX-01 | — (prérequis : le compte précède tout) | US-01 | Créer un compte | À venir (fiche 4) | À venir (fiche 7) |
-| EX-02 | — (prérequis : le compte précède tout) | US-02 | — (précondition des cas du lecteur et de l'administrateur) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-03 | O1 | US-03 | Ajouter un livre | À venir (fiche 4) | À venir (fiche 7) |
-| EX-04 | O1 | US-04 | Consulter sa bibliothèque | À venir (fiche 4) | À venir (fiche 7) |
-| EX-05 | O1 | US-05 | Changer le statut d'un livre | À venir (fiche 4) | À venir (fiche 7) |
-| EX-06 | O2 | US-06 | Écrire ses impressions sur un livre | À venir (fiche 4) | À venir (fiche 7) |
-| EX-07 | O2 | US-07 | Retrouver ses impressions sur un livre | À venir (fiche 4) | À venir (fiche 7) |
-| EX-08 | O3 | US-08 | Consulter ses statistiques de lecture | À venir (fiche 4) | À venir (fiche 7) |
-| EX-09 | — (RGPD : supprimer son compte) | US-09 | Supprimer son compte | À venir (fiche 4) | À venir (fiche 7) |
-| EX-10 | O1 | US-10 | Modifier les informations d'un livre | À venir (fiche 4) | À venir (fiche 7) |
-| EX-11 | O1 | US-10 | Supprimer un livre | À venir (fiche 4) | À venir (fiche 7) |
-| EX-12 | — (périmètre : administration) | US-11 | Supprimer le compte d'un lecteur | À venir (fiche 4) | À venir (fiche 7) |
-| EX-13 | — (périmètre : administration) | US-11 | Restaurer un compte supprimé | À venir (fiche 4) | À venir (fiche 7) |
-| EX-14 | — (périmètre : groupes) | US-12 | Créer un groupe de lecture | À venir (fiche 4) | À venir (fiche 7) |
-| EX-15 | — (périmètre : groupes) | US-13 | Répondre à une invitation | À venir (fiche 4) | À venir (fiche 7) |
-| EX-16 | — (périmètre : groupes) | US-20 | — (Could : cas non dessiné) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-17 | O2 | US-14 | — (Could : cas non dessiné) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-18 | — (périmètre : groupes) | US-15 | — (Could : cas non dessiné) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-19 | — (périmètre : groupes) | US-16 | — (Could : cas non dessiné) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-20 | — (périmètre : contacts) | US-22 | Envoyer une demande de contact | À venir (fiche 4) | À venir (fiche 7) |
-| EX-21 | — (périmètre : contacts) | US-22 | Répondre à une demande de contact | À venir (fiche 4) | À venir (fiche 7) |
-| EX-22 | — (périmètre : groupes) | US-23 | Inviter un contact dans son groupe | À venir (fiche 4) | À venir (fiche 7) |
-| EX-23 | — (périmètre : vitrine) | US-21 | — (Could : cas non dessiné) | À venir (fiche 4) | À venir (fiche 7) |
-| EX-24 | — (périmètre : contacts) | US-22 | Retirer un contact | À venir (fiche 4) | À venir (fiche 7) |
-| RG-01 à RG-35 | Celui des exigences qu'elles précisent | Celles de ces exigences | Ceux de ces exigences ; RG-16 : aussi « Effacer les comptes expirés » | À venir (fiche 4) | À venir (fiche 7) |
-| ENF-01 à ENF-08 | — (qualité de toute l'application) | Toutes, par la définition de « terminé » | — (tous les cas) ; ENF-02 : aussi « Effacer les comptes expirés » | Tous | À venir (fiche 7) |
+| EX-01 | — (prérequis : le compte précède tout) | US-01 | Créer un compte | Création de compte | `users` |
+| EX-02 | — (prérequis : le compte précède tout) | US-02 | — (précondition des cas du lecteur et de l'administrateur) | Connexion | `users` |
+| EX-03 | O1 | US-03 | Ajouter un livre | Ajout d'un livre | `books` |
+| EX-04 | O1 | US-04 | Consulter sa bibliothèque | Bibliothèque | `books` |
+| EX-05 | O1 | US-05 | Changer le statut d'un livre | Fiche d'un livre | `books` |
+| EX-06 | O2 | US-06 | Écrire ses impressions sur un livre | Fiche d'un livre | `books` |
+| EX-07 | O2 | US-07 | Retrouver ses impressions sur un livre | Fiche d'un livre | `books` |
+| EX-08 | O3 | US-08 | Consulter ses statistiques de lecture | Statistiques | `books` |
+| EX-09 | — (RGPD : supprimer son compte) | US-09 | Supprimer son compte | Mon compte | `users` et, par cascade, les quatre autres tables |
+| EX-10 | O1 | US-10 | Modifier les informations d'un livre | — | `books` |
+| EX-11 | O1 | US-10 | Supprimer un livre | — | `books` |
+| EX-12 | — (périmètre : administration) | US-11 | Supprimer le compte d'un lecteur | — | `users`, `contact_requests`, `groups`, `group_invitations` |
+| EX-13 | — (périmètre : administration) | US-11 | Restaurer un compte supprimé | — | `users` |
+| EX-14 | — (périmètre : groupes) | US-12 | Créer un groupe de lecture | — | `groups` |
+| EX-15 | — (périmètre : groupes) | US-13 | Répondre à une invitation | — | `group_invitations` |
+| EX-16 | — (périmètre : groupes) | US-20 | — (Could : cas non dessiné) | — | `groups`, `group_invitations` |
+| EX-17 | O2 | US-14 | — (Could : cas non dessiné) | — | `books` |
+| EX-18 | — (périmètre : groupes) | US-15 | — (Could : cas non dessiné) | — | — (Could : hors du modèle) |
+| EX-19 | — (périmètre : groupes) | US-16 | — (Could : cas non dessiné) | — | — (Could : hors du modèle) |
+| EX-20 | — (périmètre : contacts) | US-22 | Envoyer une demande de contact | — | `users`, `contact_requests` |
+| EX-21 | — (périmètre : contacts) | US-22 | Répondre à une demande de contact | — | `contact_requests` |
+| EX-22 | — (périmètre : groupes) | US-23 | Inviter un contact dans son groupe | — | `group_invitations`, `contact_requests` |
+| EX-23 | — (périmètre : vitrine) | US-21 | — (Could : cas non dessiné) | — | — (Could : hors du modèle) |
+| EX-24 | — (périmètre : contacts) | US-22 | Retirer un contact | — | `contact_requests`, `group_invitations` |
+| RG-01 à RG-36 | Celui des exigences qu'elles précisent | Celles de ces exigences | Ceux de ces exigences ; RG-16 : aussi « Effacer les comptes expirés » | Ceux de ces exigences | Pour chaque règle, sa contrainte ou « hors schéma » : [mld.md, § 3](mld.md#3-modèle-physique) |
+| ENF-01 à ENF-08 | — (qualité de toute l'application) | Toutes, par la définition de « terminé » | — (tous les cas) ; ENF-02 : aussi « Effacer les comptes expirés » | Tous | ENF-01 et ENF-02 : `users` ; les autres : aucune table |
 
 ## 5. Historique
 
@@ -159,3 +160,6 @@ Une ligne par exigence fonctionnelle. Les cas d'utilisation sont ceux de [cas-ut
 | 18/11/2026 | 0.4 | Impressions : une note et un seul texte par livre, pour le ressenti et les citations (EX-06) : décision prise avec le dictionnaire des données de [mcd.md](mcd.md) |
 | 18/11/2026 | 0.4 | Livre : le même livre lu dans une autre langue est un autre livre ; une relecture ne compte pas deux fois (EX-04, EX-08, RG-12, RG-13) : décision prise avec le modèle des données |
 | 18/11/2026 | 0.4 | Deux règles trouvées par le modèle des données : pas de demande de contact à soi-même, groupes supprimés avec le compte de leur créateur (RG-34, RG-35) |
+| 19/11/2026 | 0.5 | Livre : l'auteur devient obligatoire (RG-36) : décision prise avec le modèle physique de [mld.md](mld.md) |
+| 19/11/2026 | 0.5 | Matrice : colonne « Tables » remplie, 5 tables décrites dans [mld.md](mld.md) |
+| 19/11/2026 | 0.5 | Matrice : colonne « Écrans » remplie avec les sept écrans des exigences « Must » |
