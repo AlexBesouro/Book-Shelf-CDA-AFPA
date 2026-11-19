@@ -1,12 +1,12 @@
 # Accessibilité et éco-conception — Book Shelf
 
-> Version 0.1 du 18/11/2026 · Auteur : Alex · Statut : brouillon
+> Version 0.2 du 19/11/2026 · Auteur : Alex · Statut : brouillon
 >
-> Sources : [exigences v0.3 du 18/11/2026](exigences.md) · [cas d'utilisation v0.1 du 17/11/2026](cas-utilisation.md)
+> Sources : [exigences v0.5 du 19/11/2026](exigences.md) · [cas d'utilisation v0.3 du 19/11/2026](cas-utilisation.md)
 >
 > Référentiels : [RGAA 4.1.2](https://accessibilite.numerique.gouv.fr/methode/criteres-et-tests/) (accessibilité, niveau AA visé) · [RGESN 2024](https://ecoresponsable.numerique.gouv.fr/publications/referentiel-general-ecoconception/) (éco-conception)
 
-Les maquettes ne sont pas encore faites. Les écrans cités ici sont ceux des exigences « Must » ; les maquettes reprendront leurs noms.
+Les écrans cités ici sont ceux des exigences « Must ».
 
 | Écran | Exigences |
 | --- | --- |

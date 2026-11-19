@@ -1,6 +1,6 @@
 # Backlog — Book Shelf
 
-> Version 0.3 du 18/11/2026 · Source unique : base « Backlog » dans Notion · ce fichier en est l'export lisible, mis à jour à chaque fin d'étape.
+> Version 0.4 du 19/11/2026 · Source unique : base « Backlog » dans Notion · ce fichier en est l'export lisible, mis à jour à chaque fin d'étape.
 
 ## Product Backlog
 
@@ -93,6 +93,7 @@ En tant que lecteur, je veux ajouter un livre (titre, auteur, genre, année de p
 
 - **Étant donné** une bibliothèque vide, **quand** j'ajoute « L'Étranger », Albert Camus, roman, 1942, français (origine), anglais (lecture), « à lire », **alors** il apparaît dans ma bibliothèque avec ce statut.
 - **Étant donné** un titre vide, **quand** je valide, **alors** le livre n'est pas ajouté et le champ « Titre » est signalé.
+- **Étant donné** un auteur vide, **quand** je valide, **alors** le livre n'est pas ajouté et le champ « Auteur » est signalé.
 - **Étant donné** « L'Étranger » déjà ajouté, lu en français, **quand** je l'ajoute en anglais, **alors** la bibliothèque affiche deux livres.
 - Sans statut choisi, le livre est « à lire ».
 
